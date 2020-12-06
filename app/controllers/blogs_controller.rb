@@ -8,6 +8,9 @@ class BlogsController < ApplicationController
   def create
     Blog.create(blog_params)
   end
+  def show
+    @blog = Blog.find(params[:id])  
+  end
 
   private
   def blog_params
