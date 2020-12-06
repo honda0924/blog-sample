@@ -16,6 +16,9 @@ class BlogsController < ApplicationController
     blog.update(blog_params) if blog.user_id == current_user.id
     redirect_to root_path
   end
+  def show
+    @blog = Blog.find(params[:id])  
+  end
 
   private
   def blog_params
