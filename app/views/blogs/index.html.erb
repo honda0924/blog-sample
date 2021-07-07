@@ -1,4 +1,21 @@
+<%= render 'layouts/navbar' %>
 <% @blogs.each do |blog| %>
-  <%= blog.content %>
-  <%= blog.user.name %>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <div class="m-0 d-flex justify-content-between">
+        <h6 class="font-weight-bold text-primary">
+          <%= blog.user.name %>
+        </h6>
+        <div class="d-flex justify-content-between">
+          <%= link_to "Detail", blog_path(blog.id),class:"pl-3" %>
+          <%= link_to "Edit", edit_blog_path(blog.id),class:"pl-3" %>
+        </div>
+        
+
+      </div>
+  </div>
+  <div class="card-body">
+    <%= blog.content %>
+  </div>
+</div>
 <% end %>

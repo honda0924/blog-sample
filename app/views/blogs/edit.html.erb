@@ -1,4 +1,4 @@
-<%= form_for blog do |f| %>
+<%= form_for @blog do |f| %>
   <%= f.label 'Content',for: 'contents-area' %> 
   <%= f.text_area :content ,id: 'contents-area' %>
   <%= f.submit 'Edit' %> 
